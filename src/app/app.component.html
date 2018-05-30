@@ -1,21 +1,42 @@
 <header class="main">
     <h1>{{ title }}</h1>
     <div>
-        <button class="btn">
-            Retrieve IP Data
+        <button class="btn" (click)="showData()">
+            <i class="fas fa-sync-alt"></i> Retrieve IP Data
         </button>
     </div>
 </header>
 <main>
-    <header>
-
-    </header>
-    <div class="card">
-        <header>Subnets</header>
+    <div class="column">
+        <section class="card">
+            <header><i class="fas fa-sitemap"></i> Subnets</header>
+            <mat-accordion *ngIf="ipData.length">
+                <mat-expansion-panel *ngFor="let set of ipData">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ set.subnet + '/' + set.cidr }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list role="list">
+                        <mat-list-item role="listitem"
+                                       [ngClass]="{'active': subnet && ipInfo.ip === subnet.subnet}"
+                                       *ngFor="let ipInfo of set.ips"
+                                       (click)="setSubnet(set.subnet, ipInfo)">
+                            {{ ipInfo.ip }}
+                        </mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </section>
     </div>
-    <div class="card">
-        <header>IP: {{ ip_address }}</header>
-        <br>
+    <div class="column">
+        <section class="card">
+            <header><i class="fas fa-map-marker-alt"></i> IP: {{ subnet?.ip }}</header>
+            <ul *ngIf="subnet">
+                <li>Subnet: {{ subnet?.subnet }}</li>
+                <li>Address Tag: {{ subnet?.address }}</li>
+            </ul>
+        </section>
     </div>
 </main>
 
