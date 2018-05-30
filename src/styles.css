@@ -28,6 +28,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     background: #EEE;
+    color: #555;
     font-family: 'Open Sans', 'Arial Narrow', sans-serif;
     font-size: 18px;
     font-weight: 100;
@@ -56,19 +57,21 @@ main {
     grid-column-gap: 2vw;
     padding: 2vw;
 }
-main header {
-    grid-column-start: col1;
-    grid-column-end: span 2;
-}
 .card {
     background: #FFF;
     border-radius: 5px;
+    min-height: 76px;
 }
 .card header {
     background: #467186;
     border-radius: 5px 5px 0 0;
     color: #FFF;
     padding: 10px 15px;
+}
+.card ul {
+    border-bottom: 1px solid #EEE;
+    list-style: none;
+    padding: 15px;
 }
 .btn {
     background: #91A436;
@@ -85,4 +88,49 @@ main header {
 }
 .btn:hover {
     background: #697B14;
+}
+.mat-accordion {
+    display: block;
+    padding-bottom: .1%;
+}
+.mat-accordion .mat-expansion-panel {
+    border: 1px solid #467186;
+    box-shadow: none !important;
+    margin: 15px !important;
+}
+.mat-accordion .mat-expansion-panel-header {
+    background:#DEEEF6 !important;
+    margin: 5px;
+    padding: 0 15px;
+}
+.mat-accordion .mat-expansion-panel-body {
+    padding: 0 15px 15px;
+}
+.mat-accordion .mat-expansion-panel-body .mat-list .mat-list-item {
+    height: auto;
+    transition: all .25s;
+}
+.mat-list-item, .card ul li {
+    cursor: pointer;
+    padding: 5px;
+}
+.mat-list-item:nth-of-type(odd) {
+    background: #DEEEF6;
+}
+.mat-list-item.active,
+.mat-list-item:hover {
+    background: #467186;
+    color: #FFF;
+}
+.mat-list .mat-list-item .mat-list-item-content {
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 560px) {
+    main {
+        display: block;
+    }
+    .card {
+        margin-bottom: 15px;
+    }
 }
