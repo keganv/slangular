@@ -1,10 +1,29 @@
 # Slangular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This project uses the [Angular CLI](https://github.com/angular/angular-cli). Please refer to the [Angular documentation](https://angular.io/docs). 
 
-## Development server
+## Getting started
+In your CLI, change directories to where you downloaded the application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+For example: `cd your_directory_name`.
+
+#### API Development Server (Slim)
+First you'll want to start the Slim Framework API by executing the following commands.
+
+`cd slim`
+
+`composer install`
+
+`composer serve`
+
+#### Frontend JavaScript Server (Angular)
+After you've installed all the Composer vendor bundles and started the PHP server, change directory back to the root of the project and run the following commands.
+
+`npm install`
+
+`ng serve`
+
+Then navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -21,7 +40,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
