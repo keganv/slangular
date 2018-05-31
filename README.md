@@ -17,7 +17,7 @@ First you'll want to start the Slim Framework API by executing the following com
 `composer start`
 
 #### Frontend JavaScript Server (Angular)
-After you've installed all the Composer vendor bundles and started the PHP server, change directory back to the root of the project and run the following commands.
+After you've installed all the Composer vendor bundles and started the PHP server, change directory back to the root of the project and run the following commands in a new window.
 
 `npm install`
 
